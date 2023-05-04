@@ -17,4 +17,5 @@ Voto
 
 
 ### **Steps:**
-1) 
+1) Creo i componenti principali;
+2)
