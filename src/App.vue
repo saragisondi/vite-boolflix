@@ -1,6 +1,6 @@
 <script>
 /*****************IMPORT***************************/
-import Header from './components/Header.Vue';
+import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
 import axios from 'axios';
@@ -24,8 +24,9 @@ export default {
 
 /*************METHODS*************************/  
   methods:{
+    // film
     getApi(){
-      axios.get(store.ApiUrl,{
+      axios.get(store.ApiUrlFilm,{
         params:{
           query:store.searchTitle
         }
@@ -34,12 +35,27 @@ export default {
         store.FilmRequest = result.data.results
         console.log(store.FilmRequest)
       })
-    }
+    },
+    // series
+    getApiSeries(){
+      axios.get(store.ApiUrlSeries,{
+        params:{
+          query:store.searchTitle
+        }
+      })
+      .then(result => {
+        store.SeriesRequest = result.data.results
+        console.log(store.SeriesRequest)
+      })
+    },
   },
 
 /*************MOUNTED*************************/  
   mounted(){
+    // film
     this.getApi()
+    // series
+    this.getApiSeries()
   }
 }
 </script>
@@ -47,7 +63,9 @@ export default {
 <template>
 
   <Header/>
-  <Main @inizioFunzione="getApi"/>
+
+  <Main @startFunction="getApi" @searchSeries="getApiSeries"/>
+  
   <Footer/>
 
 </template>

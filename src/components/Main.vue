@@ -20,11 +20,12 @@ export default {
 <template>
 <!-- input -->
   <div class="searchbar debug">
-    <input @keyup.enter="$emit('inizioFunzione')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle">
-
-    <button @click="$emit('inizioFunzione')">Cerca</button>
+    <input @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle">
+<!-- button -->
+    <button @click="$emit('startFunction'), $emit('searchSeries')">Cerca</button>
   </div>
 
+<!-- card film-->
   <Card
   v-for="film in store.FilmRequest"
   :key="film"
@@ -34,6 +35,15 @@ export default {
   :vote="film.vote_average"
   />
 
+  <!-- card series-->
+  <Card
+  v-for="series in store.SeriesRequest"
+  :key="series"
+  :title="series.name"
+  :originalTitle="series.original_name"
+  :language="series.original_language"
+  :vote="series.vote_average"
+  />
 </template>
 
 <style lang="scss" scoped>
