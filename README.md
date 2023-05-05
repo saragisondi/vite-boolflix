@@ -21,4 +21,7 @@ Voto
 2) Creo una input con una searchbar;
 3) Creo un file 'store' dove inserisco il mio ApiUrl;
 4) Faccio la chiamata Api;
-5) Collego la chiamata Api al button;
+5) Collego la chiamata Api al button  e al input con un emit;
+6) Creo un componente: Card;
+7) Creo le props nel figlio per valorizzarle nel genitore;
+8) Faccio un ciclo for per stamparle;
