@@ -18,4 +18,7 @@ Voto
 
 ### **Steps:**
 1) Creo i componenti principali;
-2)
+2) Creo una input con una searchbar;
+3) Creo un file 'store' dove inserisco il mio ApiUrl;
+4) Faccio la chiamata Api;
+5) Collego la chiamata Api al button;
