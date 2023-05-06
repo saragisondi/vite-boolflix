@@ -5,8 +5,12 @@
 }
 
 // font
+body{
+  // background-color: #141414;
+  // color:#E5E5E5;
+  font-family: "Noto Sans", sans-serif;
+}
 
-.debug{
-  background-color: pink;
-  border:1px solid black;
+img{
+  max-width: 100%;
 }

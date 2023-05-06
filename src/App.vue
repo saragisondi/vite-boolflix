@@ -1,5 +1,6 @@
 <script>
 /*****************IMPORT***************************/
+import "@fontsource/noto-sans"
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
@@ -62,14 +63,14 @@ export default {
 
 <template>
 
-  <Header/>
+  <Header @startFunction="getApi" @searchSeries="getApiSeries"/>
 
-  <Main @startFunction="getApi" @searchSeries="getApiSeries"/>
+  <Main />
   
   <Footer/>
 
 </template>
 
-<style>
-
+<style lang="scss">
+  @use './components/scss/general.scss'as *;
 </style>

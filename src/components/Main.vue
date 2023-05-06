@@ -13,17 +13,18 @@ export default {
   },
   components:{
     Card
-  }
+  },
+  emits: ['startFunction', 'searchSeries']
 }
 </script>
 
 <template>
 <!-- input -->
-  <div class="searchbar debug">
-    <input @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle">
+  <!-- <div class="searchbar debug">
+    <input @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle"> -->
 <!-- button -->
-    <button @click="$emit('startFunction'), $emit('searchSeries')">Cerca</button>
-  </div>
+    <!-- <button @click="$emit('startFunction'), $emit('searchSeries')">Cerca</button>
+  </div> -->
 
 <!-- card film-->
   <Card
@@ -33,6 +34,7 @@ export default {
   :originalTitle="film.original_title"
   :language="film.original_language"
   :vote="film.vote_average"
+  :img="film.poster_path"
   />
 
   <!-- card series-->
