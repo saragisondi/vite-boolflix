@@ -31,19 +31,21 @@ export default {
       
       <div class="right">
         <ul>
-          <!-- input -->
           <div class="searchbar">
-          
+            
+            <!-- button -->
+            <div class="container-button">
+              <button @click="$emit('startFunction'), $emit('searchSeries')">
+                <font-awesome-icon class="icon" icon="fa-solid fa-magnifying-glass" />
+              </button>
+            </div>
+            <!-- input -->
           <input @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle">
-        <!-- button -->
-        <button @click="$emit('startFunction'), $emit('searchSeries')">
-          <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-        </button>
         </div>
 
           <li><a href="#">Bambini </a></li>
-          <li><a href="#"><font-awesome-icon icon="fa-regular fa-bell" /></a></li>
-          <li><a href="#">profilo</a></li>
+          <li><a href="#"><font-awesome-icon class="icon" icon="fa-regular fa-bell" /></a></li>
+          <li><a href="#">profilo <font-awesome-icon icon="fa-solid fa-caret-down" /></a></li>
         </ul>
       </div>
   
@@ -59,14 +61,16 @@ export default {
   .container-header{
     display: flex;
     justify-content: space-between;
+    margin:20px 0;
+
 
     .left{
       display: flex;
-      width:70%;
+      margin-left:50px;
 
       .logo{
         img{
-          width: 150px;
+          width: 100px;
           height:30px;
           vertical-align: middle;
         }
@@ -84,26 +88,44 @@ export default {
         a{
           text-decoration: none;
           margin:0 5px;
-          font-weight: bold;
-          // color:#E5E5E5;
+            color:#E5E5E5;
+            font-size: small;
         }
       }
     }
     .right{
-      width: 30%;
+      margin-right:30px;
       .searchbar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         input{
           height:30px;
+          border:1px solid #E5E5E5;
+          background-color:#141414 ;
+          color:#E5E5E5;
+          outline:none;
+          padding: 5px 50px;
         }
+
+        .container-button{
+          border-right: none;
+        }
+        
         button{
           width: 30px;
-          height: 30px;
+          height: 26px;
           cursor: pointer;
+          position: absolute;
+          top:22px;
+          margin-left:2px;
+          z-index:1;
+          border: none;
+          background-color:#141414 ;
+          color: #E5E5E5;
         }
+      }
+
+      a{
+        margin:0 10px;
       }
     }
 
