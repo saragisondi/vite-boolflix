@@ -23,42 +23,66 @@ export default {
 </script>
 
 <template>
-  <ul>
+  <!-- <ul>
     <li><h4>Titolo:</h4></li>
     <li>{{title}}</li>
     <li><h4>Titolo originale:</h4></li>
     <li>{{originalTitle}}</li>
     <li><h4>Lingua:</h4></li>
-    <li>
+    <li> -->
       <!-- flag -->
-      <img class="flag" :src="`/public/${language}.png`" :alt="language">
+      <!-- <img class="flag" :src="`/public/${language}.png`" :alt="language">
     </li>
     <li><h4>Voto:</h4></li>
     <li>{{vote.toFixed()}}</li>
-  </ul>
-  <ul>
-    
-  </ul>
-  <li>
-    <img class="poster" :src="`https://image.tmdb.org/t/p/w200/${img}`" :alt="title">
-  </li>
+  </ul> -->
+
+  <div class="container-cards">
+    <div class="card">
+      <h4>{{title}}</h4>
+      <img :src="`https://image.tmdb.org/t/p/w200/${img}`" alt="">
+  </div>
+
+</div>
 
 </template>
 
 <style lang="scss" scoped>
-ul{
-  border:1px solid black;
+// ul{
+//   border:1px solid black;
 
-  li{
-    height:20px;
-    .flag{
-      width: 20px;
+//   li{
+//     height:20px;
+//     .flag{
+//       width: 20px;
+//     }
+
+//     .poster{
+//       height:200px;
+//     }
+// }
+
+// }
+
+
+  .card{
+    width:300px;
+    height:200px;
+    margin:0 5px;
+    position:relative;
+
+
+    h4{
+      position:absolute;
+      color:#E5E5E5;
+      text-align: center;
     }
 
-    .poster{
+    img{
+      width:300px;
       height:200px;
+      object-fit: cover;
     }
-}
+  }
 
-}
 </style>

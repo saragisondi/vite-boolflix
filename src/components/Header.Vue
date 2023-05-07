@@ -1,6 +1,6 @@
 <script>
 /*****************************IMPORT*********************************************/
-import DropdownMenu from './DropdownMenu.vue'
+import DropdownMenu from './Header/DropdownMenu.vue'
 import{store} from './data/store'
 
 export default {
@@ -77,69 +77,71 @@ export default {
  @use './scss/general.scss' as *;
 
 
-  .container-header{
+.container-header{
+  display: flex;
+  justify-content: space-between;
+  margin:20px 0;
+  .left{
     display: flex;
-    justify-content: space-between;
-    margin:20px 0;
-
-
-    .left{
-      display: flex;
-      margin-left:50px;
-      
-
-      .logo{
-        img{
-          width: 100px;
-          height:30px;
-          vertical-align: middle;
-        }
+    margin-left:50px;
+    .logo{
+      img{
+        width: 100px;
+        height:30px;
+        vertical-align: middle;
+        cursor:pointer;
       }
     }
+  }
 
-    ul{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin:0 20px;
-      height:30px;
-      li{
-        list-style: none;
-        a{
-          text-decoration: none;
-          margin:0 5px;
-            color:#E5E5E5;
-            font-size: small;
-        }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 20px;
+    height:30px;
+
+    li{
+      list-style: none;
+
+      a{
+        text-decoration: none;
+        margin:0 5px;
+        color:#E5E5E5;
+        font-size: small;
+        margin:0 10px;
+      }
+
+      a:hover{
+        color:grey;
       }
     }
-    .right{
-      margin-right:30px;
+  }
+  .right{
+    margin-right:30px;
+    .searchbar{
+      position:relative;
+      background-color:#141414 ;
+      .container-input{
+        width: 30px;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+      }
 
-      
-      .searchbar{
-        position:relative;
-        background-color:#141414 ;
-
-        .container-input{
-          width: 30px;
-          vertical-align: middle;
-          white-space: nowrap;
-          position: relative;
-        }
+      input{
+        width: 30px;
+        height:30px;
+        background: transparent;
+        color:grey;
+        border:none;
+        font-size: 10pt;
+        outline:none;
+        padding-left:40px;
+        transition: width .45s ease;
+        opacity:0;
+      }
         
-        input{
-          width: 30px;
-          height:30px;
-          background: transparent;
-          color:grey;
-          border:none;
-          font-size: 10pt;
-          outline:none;
-          padding-left:40px;
-          transition: width .45s ease;
-          opacity:0;
-        }
         .container-button{
           border-right: none;
         }
@@ -152,34 +154,24 @@ export default {
           left:0;
           margin-left:2px;
           z-index:1;
-
         }
-
-      }
-      button:active .icon{
-        font-size: 25px;
-      }
-      
-      .searchbar.active{
-        width: 200px;
-
-      }
-
-      input.active{
-        width: 200px;
-        margin-right:400px;
-          border:1px solid #E5E5E5;
-          opacity:1;
-        }
-
-
-      a{
-        margin:0 10px;
-      }
 
     }
-    
-  }
+    button:active .icon{
+      font-size: 25px;
+    }
+      
+    .searchbar.active{
+      width: 200px;
+    }
 
+    input.active{
+      width: 200px;
+      margin-right:400px;
+      border:1px solid #E5E5E5;
+      opacity:1;
+    }
+  }
+}
 
 </style>
