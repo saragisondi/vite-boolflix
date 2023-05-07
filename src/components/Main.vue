@@ -19,12 +19,6 @@ export default {
 </script>
 
 <template>
-<!-- input -->
-  <!-- <div class="searchbar debug">
-    <input @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle"> -->
-<!-- button -->
-    <!-- <button @click="$emit('startFunction'), $emit('searchSeries')">Cerca</button>
-  </div> -->
 
 <!-- card film-->
   <Card
