@@ -16,31 +16,29 @@ export default {
     originalTitle:String,
     language:String,
     vote:Number,
-    img:String
+    img:String,
+    overview:String
   },
   
 }
 </script>
 
 <template>
-  <!-- <ul>
-    <li><h4>Titolo:</h4></li>
-    <li>{{title}}</li>
-    <li><h4>Titolo originale:</h4></li>
-    <li>{{originalTitle}}</li>
-    <li><h4>Lingua:</h4></li>
-    <li> -->
-      <!-- flag -->
-      <!-- <img class="flag" :src="`/public/${language}.png`" :alt="language">
-    </li>
-    <li><h4>Voto:</h4></li>
-    <li>{{vote.toFixed()}}</li>
-  </ul> -->
 
   <div class="container-cards">
     <div class="card">
-      <h4>{{title}}</h4>
-      <img :src="`https://image.tmdb.org/t/p/w200/${img}`" alt="">
+      
+      <h4 class="title">{{title}}</h4>
+      <div class="description">
+        <h6>Titolo originale:</h6>
+        <h2>{{originalTitle}}</h2>
+        <p>{{ overview }}</p>
+        <!-- flag -->
+        <img class="flag" :src="`/public/${language}.png`" :alt="language">
+        <h6>Voto:</h6>
+        <h4>{{vote.toFixed()}}</h4>
+      </div>
+      <img class="poster" :src="`https://image.tmdb.org/t/p/w200/${img}`" alt="">
   </div>
 
 </div>
@@ -48,22 +46,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// ul{
-//   border:1px solid black;
-
-//   li{
-//     height:20px;
-//     .flag{
-//       width: 20px;
-//     }
-
-//     .poster{
-//       height:200px;
-//     }
-// }
-
-// }
-
 
   .card{
     width:300px;
@@ -71,18 +53,48 @@ export default {
     margin:0 5px;
     position:relative;
 
-
-    h4{
+    .title{
       position:absolute;
-      color:#E5E5E5;
-      text-align: center;
     }
 
-    img{
+    .description{
+      position:absolute;
+      color:#E5E5E5;
+      display:none;
+
+      p{
+        font-size: small;
+        margin:20px 10px;
+      }
+    }
+
+    .flag{
+      width: 30px;
+      margin:0 10px;
+    }
+    .poster{
       width:300px;
       height:200px;
       object-fit: cover;
     }
   }
+  
+  .card:hover{
+    width: 500px;
+    height:400px;
+    .poster{
+      width:500px;
+      height:400px;
+    }
+
+    .title{
+      display:none;
+    }
+    .description{
+      display: block;
+    }
+
+  }
+
 
 </style>

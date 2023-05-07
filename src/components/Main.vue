@@ -21,6 +21,7 @@ export default {
 <template>
 
 <div class="container-cards">
+  
   <!-- card film-->
     <Card
     v-for="film in store.FilmRequest"
@@ -29,7 +30,8 @@ export default {
     :originalTitle="film.original_title"
     :language="film.original_language"
     :vote="film.vote_average"
-    :img="film.backdrop_path"
+    :img="film.poster_path"
+    :overview="film.overview"
     />
   
     <!-- card series-->
@@ -53,5 +55,9 @@ export default {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 100px;
+
   }
+
+
+
 </style>
