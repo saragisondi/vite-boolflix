@@ -243,6 +243,7 @@ export default {
       display:block;
     }
 
+
       .container-avatar.other-account{
         margin: 10px 15px;
         font-weight: bold;
@@ -265,6 +266,7 @@ export default {
           height:40px;
           object-fit: cover;
           border-radius: 5px;
+          cursor: pointer;
         }
       }
       
@@ -279,12 +281,12 @@ export default {
         position:absolute;
         top:5px;
         right:-45px;
+        background-color: #141414;
         // tofix
-        background-color: brown;
+        border:1px solid #E5E5E5;
         width: 205px;
         height:400px;
       }
-
       .settings{
         text-align: start;
         margin:30px 15px;
@@ -296,8 +298,13 @@ export default {
           span{
             margin-left:10px;
           }
-        }
 
+        }
+        
+      }
+      span:hover{
+        text-decoration: underline;
+        cursor: pointer;
       }
       
     }
