@@ -29,13 +29,12 @@ export default {
     <div class="card">
       
       <h4 class="title">{{title}}</h4>
+      <div class="overlay"></div>
       <div class="description">
-        <h6>Titolo originale:</h6>
         <h2>{{originalTitle}}</h2>
         <p>{{ overview }}</p>
         <!-- flag -->
         <img class="flag" :src="`/public/${language}.png`" :alt="language">
-        <h6>Voto:</h6>
         <h4>{{vote.toFixed()}}</h4>
       </div>
       <img class="poster" :src="`https://image.tmdb.org/t/p/w200/${img}`" alt="">
@@ -52,6 +51,7 @@ export default {
     height:200px;
     margin:0 5px;
     position:relative;
+    
 
     .title{
       position:absolute;
@@ -65,6 +65,10 @@ export default {
       p{
         font-size: small;
         margin:20px 10px;
+      }
+
+      h4{
+        margin:10px 10px;
       }
     }
 
@@ -94,6 +98,12 @@ export default {
       display: block;
     }
 
+    .overlay{
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
   }
 
 
