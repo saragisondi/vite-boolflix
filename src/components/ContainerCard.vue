@@ -25,8 +25,31 @@ export default {
   </div>
 
   <div v-if="store.FilmRequest.length == 0">
-    <h3 class="section">POPOLARI</h3>
+    <h2 class="section">POPOLARI</h2>
     
+    <div class="jumbotron">
+
+      <div class="description">
+
+        <div class="title">
+          <div class="square">
+            <p>Top</p>
+            <h3>10</h3>
+          </div>
+          <h1>Oggi al n°1 tra i film</h1>
+        </div>
+        <h3>description</h3>
+
+        <div class="container-button">
+          <button><font-awesome-icon icon="fa-solid fa-play" /> Riproduci</button>
+          <button><font-awesome-icon icon="fa-solid fa-circle-info" /> Altre info</button>
+        </div>
+
+      </div>
+
+      <img src="" alt="jumbotron">
+    </div>
+
     <div class="container-cards">
       <!-- Popular -->
       <Card
@@ -43,7 +66,7 @@ export default {
   </div>
 
   <div v-else>
-      <h3>FILM</h3>
+      <h2 class="section">FILM</h2>
       <div class="container-cards">
         <!-- card film-->
         <Card
@@ -59,7 +82,7 @@ export default {
       </div>
     
 
-      <h3>SERIE TV</h3>
+      <h2 class="section">SERIE TV</h2>
       <div class="container-cards">
         <!-- card series-->
         <Card
@@ -79,13 +102,48 @@ export default {
 </template>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './scss/general.scss' as *;
 
-h3{
+.section{
   margin:0 150px;
 }
 
+.jumbotron{
+  width: 100%;
+  height:800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+
+  .description{
+    position:absolute;
+    left:50px;
+
+    .title{
+      display:flex;
+
+    }
+    .square{
+      font-weight:bold;
+      background-color:red;
+      width: 43px;
+      height:43px;
+      text-align: center;
+      margin-right:10px;
+      border-radius:5px;
+      p{
+        font-size: small;
+      }
+    }
+  }
+  
+  img{
+    width: 100%;
+    height:800px;
+  }
+}
 .container-cards{
   display:flex;
   justify-content: center;
@@ -93,5 +151,21 @@ h3{
   flex-wrap: wrap;
   margin-bottom: 85px;
   margin-top:10px;
+}
+.container-button{
+  button:first-child{
+    background-color:#FFFFFF;
+    color:black;
+  }
+  button:last-child{
+    background-color: #d0d0d09c;
+  }
+}
+button{
+  margin: 20px 10px;
+  font-size: large;
+  font-weight:bold;
+  padding:10px 20px;
+  cursor:pointer;
 }
 </style>

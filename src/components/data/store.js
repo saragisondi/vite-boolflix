@@ -12,4 +12,5 @@ export const store = reactive ({
   Populars:[],
 
   searchTitle:"",
+
 })
