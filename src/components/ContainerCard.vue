@@ -118,13 +118,14 @@ export default {
   position:relative;
 
   .description{
-    width: 40%;
+    width: 30%;
     position:absolute;
     left:50px;
     bottom:80px;
 
     .title{
       display:flex;
+      margin-bottom:20px;
 
     }
     .square{
