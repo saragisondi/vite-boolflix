@@ -60,11 +60,11 @@ export default {
 
 <style lang="scss" scoped>
   @use './scss/general.scss' as *;
+  @use './scss/mixin.scss' as *;
+  @use './scss/typography.scss' as *;
 
 footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@include d-flex('both');
   .container-footer{
     width: 45%;
     margin:100px 0;
@@ -77,7 +77,6 @@ footer{
       .icon{
         margin:10px;
         font-size: x-large;
-        cursor: pointer;
       }
     }
 
@@ -87,7 +86,6 @@ footer{
     }
 
     a,p{
-      text-decoration:none;
       color:#7D7A70;
     }
 
@@ -106,7 +104,6 @@ footer{
         margin:0 40px;
         .border{
             border:1px solid #7D7A70;
-            
             padding: 5px 20px;
           }
         

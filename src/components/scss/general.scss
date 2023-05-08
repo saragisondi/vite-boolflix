@@ -1,3 +1,5 @@
+@use './typography.scss' as *;
+
 *{
   margin:0;
   padding:0;
@@ -6,28 +8,41 @@
 
 // font
 body{
-  background-color: #141414;
-  color:#E5E5E5;
-  font-family: "Noto Sans", sans-serif;
+  background-color: $primary-color;
+  color:$secondary-color;
+  font-family: $primary-font;
 }
-li{
-  list-style: none;
-}
+
 
 img{
   max-width: 100%;
+  cursor: pointer;
 }
 
-.icon{
-  font-size: 20px;
-}
-
-.icon.x{
-  font-size: small;
-}
 
 button{
   border: none;
-  background-color:#141414 ;
-  color: #E5E5E5;
+  background-color:$primary-color ;
+  color: $secondary-color;
+  cursor: pointer;
+}
+
+li{
+  list-style: none;
+
+  a{
+    text-decoration: none;
+    font-size: small;
+  }
+}
+
+
+.icon{
+  font-size: 20px;
+  cursor:pointer;
+}
+
+span:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }

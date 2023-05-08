@@ -104,29 +104,25 @@ export default {
 
 <style lang="scss" scoped>
 @use './scss/general.scss' as *;
+@use './scss/mixin.scss' as *;
+@use './scss/typography.scss' as *;
 
-.section{
-  margin:0 150px;
-}
 
 .jumbotron{
   width: 100%;
   height:900px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include d-flex("both");
   position:relative;
-
+  
   .description{
     width: 30%;
     position:absolute;
     left:50px;
     bottom:80px;
-
+    
     .title{
       display:flex;
       margin-bottom:20px;
-
     }
     .square{
       font-weight:bold;
@@ -148,17 +144,18 @@ export default {
     object-fit: cover;
   }
 }
+.section{
+  margin:0 150px;
+}
 .container-cards{
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  @include d-flex("both");
   flex-wrap: wrap;
   margin-bottom: 85px;
   margin-top:10px;
 }
 .container-button{
   button:first-child{
-    background-color:#FFFFFF;
+    background-color:white;
     color:black;
   }
   button:last-child{
@@ -170,6 +167,5 @@ button{
   font-size: large;
   font-weight:bold;
   padding:10px 20px;
-  cursor:pointer;
 }
 </style>

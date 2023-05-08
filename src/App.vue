@@ -85,4 +85,6 @@ export default {
 
 <style lang="scss">
   @use './components/scss/general.scss'as *;
+  @use './components/scss/typography.scss' as *;
+  @use './components/scss/mixin.scss' as *;
 </style>

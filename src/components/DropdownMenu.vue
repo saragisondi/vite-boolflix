@@ -47,6 +47,11 @@ import Settings from './Settings.vue';
 
 
 <style lang="scss">
+@use './scss/general.scss' as *;
+@use './scss/typography.scss' as *;
+@use './scss/mixin.scss' as *;
+
+
 .fa-caret-down,.fa-caret-up{
   position:absolute;
   top:30px;
@@ -61,15 +66,13 @@ import Settings from './Settings.vue';
   width: 40px;
   height:40px;
   margin:0 10px;
-  display: flex;
-  align-items: center;
+  @include d-flex('vertical');
   
   img{
     width: 40px;
     height:40px;
     object-fit: cover;
     border-radius: 5px;
-    cursor: pointer;
   }
 }
 
@@ -79,23 +82,17 @@ import Settings from './Settings.vue';
 
   .account{
     display: none;
-    position:absolute;
+    @include p-absolute;
     top:2px;
     right:-45px;
-    background-color: #141414;
-    // tofix
-    border:1px solid #E5E5E5;
+    background-color: $primary-color;
+    border:1px solid $secondary-color;
     width: 205px;
     height:400px;
-    z-index: 1;
   }
 }
 
 /***************************HOVER**********************************/
-span:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 button:hover .fa-caret-down{
   opacity:0;

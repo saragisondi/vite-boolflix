@@ -27,10 +27,11 @@
 
 
 <style lang="scss" scoped>
+@use './scss/typography.scss' as *;
 .settings{
   text-align: start;
   margin:30px 15px;
-  border-bottom:1px solid #E5E5E5;
+  border-bottom:1px solid $secondary-color;
 
   div{
     margin:20px 0;

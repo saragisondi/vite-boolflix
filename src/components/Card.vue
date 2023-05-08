@@ -53,6 +53,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+  @use './scss/typography.scss' as *;
+  @use './scss/mixin.scss' as *;
+  @use './scss/general.scss' as *;
+
 
   .card{
     width:300px;
@@ -67,7 +71,7 @@ export default {
 
     .description{
       position:absolute;
-      color:#E5E5E5;
+      color:$secondary-color;
       display:none;
 
       p{
