@@ -17,8 +17,9 @@ export default {
     language:String,
     vote:Number,
     img:String,
-    overview:String
+    overview:String,
   },
+
   
 }
 </script>
@@ -26,8 +27,9 @@ export default {
 <template>
 
   <div class="container-cards">
+
     <div class="card">
-      
+
       <h4 class="title">{{title}}</h4>
       <div class="overlay"></div>
       <div class="description">
@@ -35,8 +37,14 @@ export default {
         <p>{{ overview }}</p>
         <!-- flag -->
         <img class="flag" :src="`/public/${language}.png`" :alt="language">
-        <h4>{{vote.toFixed()}}</h4>
+        <div>
+
+          <!-- stars -->
+          <font-awesome-icon icon="fa-solid fa-star" style="color: #d8a90a; "  v-for="(star, i) in vote" :key="i" />
+          <font-awesome-icon icon="fa-regular fa-star" v-for="(star, i) in 5 - vote" :key="i"/>
+        </div>
       </div>
+      <!-- background card -->
       <img class="poster" :src="`https://image.tmdb.org/t/p/w200/${img}`" alt="">
   </div>
 
@@ -65,10 +73,6 @@ export default {
       p{
         font-size: small;
         margin:20px 10px;
-      }
-
-      h4{
-        margin:10px 10px;
       }
     }
 
@@ -104,6 +108,7 @@ export default {
       width: 100%;
       height: 100%;
     }
+
   }
 
 

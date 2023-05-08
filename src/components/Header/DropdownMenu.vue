@@ -87,6 +87,7 @@ import Settings from './Settings.vue';
     border:1px solid #E5E5E5;
     width: 205px;
     height:400px;
+    z-index: 1;
   }
 }
 
