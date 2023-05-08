@@ -25,12 +25,11 @@ export default {
   </div>
 
   <div v-if="store.FilmRequest.length == 0">
-    <h2 class="section">POPOLARI</h2>
     
     <div class="jumbotron">
-
+      
       <div class="description">
-
+        
         <div class="title">
           <div class="square">
             <p>Top</p>
@@ -38,18 +37,19 @@ export default {
           </div>
           <h1>Oggi al n°1 tra i film</h1>
         </div>
-        <h3>description</h3>
-
+        <h3>"Tutti abbiamo un supereroe dentro di noi, ci vuole solo un po' di magia per farlo uscire fuori. Nel caso di Billy Batson, basta pronunciare una sola parola – SHAZAM! – per far sì che uno scaltro quattordicenne rimasto orfano si trasformi in un adulto, il Supereroe Shazam, per gentile concessione di un anziano mago."</h3>
+        
         <div class="container-button">
           <button><font-awesome-icon icon="fa-solid fa-play" /> Riproduci</button>
           <button><font-awesome-icon icon="fa-solid fa-circle-info" /> Altre info</button>
         </div>
 
       </div>
-
-      <img src="" alt="jumbotron">
+      
+      <img src="/public/jumbotron.jpeg" alt="jumbotron">
     </div>
-
+    
+    <h2 class="section">POPOLARI</h2>
     <div class="container-cards">
       <!-- Popular -->
       <Card
@@ -111,15 +111,17 @@ export default {
 
 .jumbotron{
   width: 100%;
-  height:800px;
+  height:900px;
   display: flex;
   justify-content: center;
   align-items: center;
   position:relative;
 
   .description{
+    width: 40%;
     position:absolute;
     left:50px;
+    bottom:80px;
 
     .title{
       display:flex;
@@ -141,7 +143,8 @@ export default {
   
   img{
     width: 100%;
-    height:800px;
+    height:900px;
+    object-fit: cover;
   }
 }
 .container-cards{
