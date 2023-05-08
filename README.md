@@ -42,3 +42,7 @@ Ci viene passata dall’API solo la parte finale dell’URL, questo perché poi 
 
 ### **Steps:**
 1) Aggiungo alle props l'elemento img per stampare le immagini di copertina;
+2) Faccio un ciclo alle stelline per i voti;
+
+**Milestone 4:**
+Modifico il layout
