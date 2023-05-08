@@ -13,6 +13,12 @@ export default {
       store,
       isActive:false,
     }
+  },
+
+  computed:{
+    deleteText(i){
+      this.i.splice()
+    }
   }
 }
 </script>
@@ -41,10 +47,11 @@ export default {
           <div class="searchbar" :class="{active:isActive}">
             <!-- button -->
             <div class="container-button">
-              <button :class="{active:isActive}" @click="isActive = !isActive,$emit('startFunction'), $emit('searchSeries')">
+              <button class="search" :class="{active:isActive}" @click="isActive = !isActive,$emit('startFunction'), $emit('searchSeries')">
                 <font-awesome-icon class="icon" icon="fa-solid fa-magnifying-glass" />
               </button>
             </div>
+
             <!-- input -->
             <div class="container-input">
               <input :class="{active:isActive}"  @keyup.enter="$emit('startFunction'), $emit('searchSeries')" type="text" placeholder="Cosa vuoi vedere?" v-model="store.searchTitle" >
@@ -145,7 +152,7 @@ export default {
         .container-button{
           border-right: none;
         }
-
+        
         button{
           height: 26px;
           cursor: pointer;
@@ -160,9 +167,13 @@ export default {
     button:active .icon{
       font-size: 25px;
     }
+
       
     .searchbar.active{
       width: 200px;
+      .delete{
+        opacity:1;
+      }
     }
 
     input.active{
@@ -170,6 +181,7 @@ export default {
       margin-right:400px;
       border:1px solid #E5E5E5;
       opacity:1;
+
     }
   }
 }

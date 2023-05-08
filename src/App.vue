@@ -26,6 +26,13 @@ export default {
 
 /*************METHODS*************************/  
   methods:{
+    //popular
+    getApiPopular(){
+      axios.get(store.ApiUrlPopular)
+      .then(result =>{
+        store.Populars = result.data.results
+      })
+    },
     // film
     getApi(){
       axios.get(store.ApiUrlFilm,{
@@ -36,6 +43,7 @@ export default {
       .then(result => {
         store.FilmRequest = result.data.results
         console.log(store.FilmRequest)
+        store.searchTitle="";
       })
     },
     // series
@@ -48,12 +56,15 @@ export default {
       .then(result => {
         store.SeriesRequest = result.data.results
         console.log(store.SeriesRequest)
+        store.searchTitle="";
       })
     },
   },
 
 /*************MOUNTED*************************/  
   mounted(){
+    //popular
+    this.getApiPopular()
     // film
     this.getApi()
     // series
