@@ -70,12 +70,14 @@ export default {
 
     .description{
       position:absolute;
+      top:50px;
+      left: 20px;
       color:$secondary-color;
       display:none;
 
-      p{
-        font-size: small;
-        margin:20px 10px;
+      p{ 
+        margin:20px 15px;
+        width: 400px;
       }
     }
 
@@ -92,10 +94,10 @@ export default {
   
   .card:hover{
     width: 500px;
-    height:400px;
+    height:600px;
     .poster{
       width:500px;
-      height:400px;
+      height:600px;
     }
 
     .title{
