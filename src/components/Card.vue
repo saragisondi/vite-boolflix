@@ -60,10 +60,9 @@ export default {
 
   .card{
     width:300px;
-    height:200px;
+    height:400px;
     margin:0 5px;
     position:relative;
-    
 
     .title{
       position:absolute;
@@ -86,7 +85,7 @@ export default {
     }
     .poster{
       width:300px;
-      height:200px;
+      height:400px;
       object-fit: cover;
     }
   }
